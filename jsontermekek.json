@@ -1,0 +1,21 @@
+{"lista":[ 
+   {
+      "Terméknév":"Lajhár teafű áztató",
+      "Leírás":"Lajhár lóg a poharad szélén.",
+      "Készlet":15,
+      "Ár":"2190"
+   },
+   {
+      "Terméknév":"Masszázst kérek csengő",
+      "Leírás":"Csengetésre házhoz jön a masszőr",
+      "Készlet":25,
+      "Ár":"2190"
+   },
+   {
+      "Terméknév":"Óriás stressz oldó Enter gomb - plüss",
+      "Leírás":" Ezt nyugodtan ütögetheti, nem tesz kárt sem magában, sem a környezetben!",
+      "Készlet":2,
+      "Ár":"5990"
+   }
+]
+}

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+main {
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+
+    background-color: rgb(248, 237, 221);
+    border-radius: 5px;
+}
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+th,
+td {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+table {
+    width: 70%;
+    margin: auto;
+}
+
+form {
+    padding-top: 30px;
+    max-width: 500px;
+    margin: auto;
+}
+textarea {
+    resize: none;
+}
+label {
+    text-align: right;
+    padding-right: 5px;
+}
+fieldset {
+    border-color: #022449;
+    border-radius: 5px;
+}
+fieldset div {
+    display: grid;
+    grid-template-columns: 100px auto;
+    padding: 5px;
+}
+legend {
+    margin: 0 auto;
+}
+footer {
+    text-align: center;
+}
+#ajax {
+    margin: 0 auto;
+    display: block;
+}
