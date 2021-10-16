@@ -46,10 +46,11 @@ $(function () {
         tablazat += "<td>" + element[key] + "</td>";
       }
 
+      //a Módosít gombok a "modosit", a Töröl gombok a "torol" classhoz tartozzanak
       tablazat +=
-        "<th><input type='button' value='Módosít' id='modosit' sorszam='" +
+        "<th><input type='button' value='Módosít' class='modosit' sorszam='" +
         index +
-        "'></th><th><input type='button' value='Töröl' id='torol' sorszam='" +
+        "'></th><th><input type='button' value='Töröl' class='torol' sorszam='" +
         index +
         "'></th></tr>";
     });
@@ -65,8 +66,7 @@ $(function () {
   function formbaBetolt(tomb) {
     /*MÓDOSÍT GOMB - rekord betöltése a formba*/
 
-    $("table").on("click", "#modosit", function () {
-      //a táblázatban található összes Módosít gombra működik
+    $("table").on("click", ".modosit", function () { //a táblázatban található összes Módosít gombra működik, a "modosit" class-ra alkalmazom
       aktSorSzama = $(this).attr("sorszam"); //a sorszám attr. alapján azonosítjuk a sort, ahol a kattintás történt  --> ez megegyezik a tömbbeli indexszel
       console.log(aktSorSzama);
       let szamlalo = 0;
@@ -84,6 +84,7 @@ $(function () {
 
     /*OK GOMB - módosítás végrehajtása*/
     $("#ok").on("click", function () {
+      if (!jQuery.isEmptyObject( aktObjektum )  ){  //ha aktObjektum nem üres objektum --> ez azért kell, hogy üres/kitöltetlen form esetén ne szúrjon be adatok nélküli, üres sort
       aktObjektum["Terméknév"] = $("#termeknev").val();
       aktObjektum["Leírás"] = $("#leiras").val();
       aktObjektum["Készlet"] = $("#keszlet").val();
@@ -95,19 +96,20 @@ $(function () {
       $("form input[type=text]").val(''); //formadatok ürítése
 
       megjelenit(tomb);
+    }
     });
   }
 
 
 
-  function torol(tomb) {       
-    $("table").on("click", "#torol", function () {
-      //a táblázatban található összes Töröl gombra működik
+  function torol(tomb) {     
+    /*TÖRÖL GOMB - rekort törlése*/  
+    $("table").on("click", ".torol", function () {//a táblázatban található összes Töröl gombra működik, a "torol" class-ra alkalmazom      
       aktSorSzama = $(this).attr("sorszam"); //a sorszám attr. alapján azonosítjuk a sort, ahol a kattintás történt  --> ez megegyezik a tömbbeli indexszel
       console.log(aktSorSzama);
       tomb.splice(aktSorSzama, 1);
       console.log(tomb);
-
+      $("form input[type=text]").val(''); //formadatok ürítése
       megjelenit(tomb);
     });
   }
